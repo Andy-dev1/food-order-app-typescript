@@ -1,8 +1,12 @@
 import CartIcon from "../Cart/CartIcon";
 import classes from './HeaderCart.module.css';
 
-const HeaderCartButton = () => {
-    return <button className={classes.button}>
+interface IProps{
+    onClick:()=>void;
+}
+
+const HeaderCartButton = ({onClick}:IProps) => {
+    return <button className={classes.button} onClick={onClick}>
         <span className={classes.icon}>
             <CartIcon/>
         </span>
