@@ -15,10 +15,10 @@ const Cart = ({ onClose }: IProps) => {
     const hasItems=cartCtx.items.length>0;
 
     const cartItemRemoveHandler=(id:any)=>{
-
+        cartCtx.removeItem(id);
     };
     const cartItemAddHandler=(item:any)=>{
-
+        cartCtx.addItem({...item,amount:1});
     };
 
     const cartItems = <ul className={classes['cart-items']}>{cartCtx.items.map((item:any) => <CartItem key={item.id} price={item.price} amount={item.amount} onRemove={cartItemRemoveHandler.bind(null,item.id)} onAdd={cartItemAddHandler.bind(null,item)} name={item.name}/>)}</ul>;
